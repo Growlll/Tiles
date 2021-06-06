@@ -1,0 +1,10 @@
+.tiles {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-content: space-between;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5px;
+  background-color: #193710;
+}

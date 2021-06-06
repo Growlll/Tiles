@@ -1,0 +1,11 @@
+.tile {
+  width: 24%;
+  height: 24%;
+  border-radius: 3px;
+  background-color: grey;
+  transition: all .2s linear;
+}
+
+.tile:hover {
+  cursor: pointer;
+}
