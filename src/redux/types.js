@@ -1,0 +1,6 @@
+export const SET_START = 'tiles/SET_START'
+export const SET_ACTIVE = 'tiles/SET_ACTIVE'
+export const SET_HIDE_TILES = 'tiles/SET_HIDE_TILES'
+export const SET_STOP_CLICK = 'tiles/SET_STOP_CLICK'
+export const SET_ACTIVE_TILE = 'tiles/SET_ACTIVE_TILE'
+export const SET_TILES_ACTIVE = 'tiles/SET_TILES_ACTIVE'

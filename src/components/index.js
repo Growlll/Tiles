@@ -1,3 +1,3 @@
-import Content from './Content/Content';
+import Content from './Content/Content'
 
 export {Content}

@@ -1,15 +1,18 @@
-import React from 'react';
-import s from './Tile.module.css';
-import {useDispatch} from 'react-redux';
-import {changeTileStatus, hideEqualTiles, setActiveTileId} from '../../redux/tilesReducer';
+import React from 'react'
+import {useDispatch} from 'react-redux'
 
-const Tile = ({item, activeTile}) => {
+import {changeTileStatus, hideEqualTiles, setActiveTileId} from '../../redux/tilesReducer'
+
+import s from './Tile.module.css'
+
+const Tile = ({item, activeTile, isChange}) => {
   const {id, status, color} = item
-  const dispatch = useDispatch()
   const Color = (status === 'active' || status === 'hide') ? color : '#14D7D7'
+  const hiddenClass = status !== 'hide' ? s.active : ''
+  const dispatch = useDispatch()
 
   const onClick = (id) => {
-    if(item.status !== 'inactive') return
+    if(!isChange || item.status !== 'inactive') return
 
     dispatch(changeTileStatus(id))
 
@@ -20,7 +23,7 @@ const Tile = ({item, activeTile}) => {
     }
   }
 
-  return <div className={s.tile} style={{backgroundColor: Color}} onClick={() => onClick(id)}></div>
+  return <div className={s.tile + ' ' + hiddenClass} style={{backgroundColor: Color}} onClick={() => onClick(id)}></div>
 }
 
 export default Tile
