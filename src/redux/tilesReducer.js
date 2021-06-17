@@ -42,13 +42,13 @@ export const tilesReducer = (state = initialState, action) => {
     case SET_TILES_ACTIVE:
       return {
         ...state,
-        tiles: [...action.tiles]
+        tiles: action.tiles.sort((a, b) => Math.random() - 0.5)
       }
 
     case SET_ACTIVE:
       return {
         ...state,
-        tiles: [...state.tiles.map(item => (item.id === action.id) ? {...item, status: 'active'} : {...item})]
+        tiles: state.tiles.map(item => (item.id === action.id) ? {...item, status: 'active'} : {...item})
       }
 
     case SET_HIDE_TILES:
